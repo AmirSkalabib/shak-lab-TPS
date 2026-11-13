@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Semi-calcolatrice — Amir Shakib</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #09090d;
+            color: #f5f5f7;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 100vh;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #a78bfa;
+            font-size: 30px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .sottotitolo {
+            color: #777481;
+            font-size: 11px;
+            letter-spacing: 4px;
+            margin-bottom: 35px;
+        }
+
+        .contenitore {
+            width: 340px;
+            max-width: 100%;
+            padding: 30px;
+
+            background: #13131a;
+            border: 1px solid #292536;
+            border-radius: 18px;
+
+            box-shadow: 0 0 35px rgba(167,139,250,0.08);
+        }
+
+        label {
+            display: block;
+            color: #aaa5b8;
+            font-size: 12px;
+            margin-bottom: 9px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 22px;
+
+            background: #09090d;
+            border: 1px solid #353044;
+            border-radius: 9px;
+
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #a78bfa;
+            box-shadow: 0 0 10px rgba(167,139,250,0.2);
+        }
+
+        .operazioni {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 9px;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 15px 5px;
+
+            background: #252132;
+            color: #c4b5fd;
+
+            border: 1px solid #39304e;
+            border-radius: 9px;
+
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+
+            transition: 0.25s;
+        }
+
+        button:hover {
+            background: #a78bfa;
+            color: #09090d;
+            box-shadow: 0 0 15px rgba(167,139,250,0.35);
+            transform: translateY(-2px);
+        }
+
+        button.selezionato {
+            background: #a78bfa;
+            color: #09090d;
+            border-color: #a78bfa;
+        }
+
+        .uguale {
+            width: 100%;
+            margin-top: 15px;
+
+            background: #a78bfa;
+            color: #09090d;
+            border: none;
+
+            font-size: 17px;
+        }
+
+        .uguale:hover {
+            background: #c4b5fd;
+        }
+
+        #risultato {
+            margin-top: 22px;
+            padding: 18px;
+
+            background: #09090d;
+            border: 1px solid #353044;
+            border-radius: 10px;
+
+            color: #a78bfa;
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            margin-top: 35px;
+            color: #55515f;
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Semi-calcolatrice<span style="color:#a78bfa">.</span></h2>
+
+    <p class="sottotitolo">AMIR SHAKIB — PROJECT 02</p>
+
+    <div class="contenitore">
+
+        <label>Primo numero</label>
+        <input type="text" id="n1" placeholder="Inserisci un numero">
+
+        <label>Secondo numero</label>
+        <input type="text" id="n2" placeholder="Inserisci un numero">
+
+        <div class="operazioni">
+
+            <button onclick="somma(this)">+</button>
+
+            <button onclick="sottrazione(this)">-</button>
+
+            <button onclick="moltiplicazione(this)">*</button>
+
+            <button onclick="divisione(this)">/</button>
+
+        </div>
+
+        <button class="uguale" onclick="calcola()">CALCOLA =</button>
+
+        <div id="risultato">
+            Risultato: —
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 AMIR SHAKIB
+    </footer>
+
+
+    <script>
+
+        let numero1;
+        let numero2;
+        let risultato;
+        let operazione = "";
+
+        function selezionaPulsante(pulsante, simbolo) {
+
+            operazione = simbolo;
+
+            let pulsanti = document.querySelectorAll(".operazioni button");
+
+            pulsanti.forEach(function(b) {
+                b.classList.remove("selezionato");
+            });
+
+            pulsante.classList.add("selezionato");
+
+        }
+
+        function somma(pulsante) {
+            selezionaPulsante(pulsante, "+");
+        }
+
+        function sottrazione(pulsante) {
+            selezionaPulsante(pulsante, "-");
+        }
+
+        function moltiplicazione(pulsante) {
+            selezionaPulsante(pulsante, "*");
+        }
+
+        function divisione(pulsante) {
+            selezionaPulsante(pulsante, "/");
+        }
+
+        function calcola() {
+
+            numero1 = Number(document.getElementById("n1").value);
+
+            numero2 = Number(document.getElementById("n2").value);
+
+            if (document.getElementById("n1").value.trim() == "" ||
+                document.getElementById("n2").value.trim() == "") {
+
+                alert("Inserire entrambi i numeri!");
+                return;
+
+            }
+
+            if (!Number.isFinite(numero1) || !Number.isFinite(numero2)) {
+
+                alert("Inserire due numeri validi!");
+                return;
+
+            }
+
+            if (operazione == "+") {
+
+                risultato = numero1 + numero2;
+
+            }
+
+            else if (operazione == "-") {
+
+                risultato = numero1 - numero2;
+
+            }
+
+            else if (operazione == "*") {
+
+                risultato = numero1 * numero2;
+
+            }
+
+            else if (operazione == "/") {
+
+                if (numero2 == 0) {
+
+                    alert("Non puoi dividere per zero!");
+                    return;
+
+                }
+
+                risultato = numero1 / numero2;
+
+            }
+
+            else {
+
+                alert("Seleziona un'operazione!");
+                return;
+
+            }
+
+            document.getElementById("risultato").innerHTML =
+                "Risultato: " + risultato;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
