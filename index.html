@@ -15,92 +15,108 @@
 }
 
 body {
-    background: #f3f1e9;
-    color: #344638;
+    background: #09090d;
+    color: #f5f5f7;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-    padding: 5% 8%;
+    padding: 45px 8%;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: auto;
 }
 
 /* HEADER */
 
-.top {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 25px;
-    border-bottom: 1px solid #d6d9cf;
-    margin-bottom: 100px;
+    border-bottom: 1px solid #25252e;
+    margin-bottom: 110px;
 }
 
-.top span {
-    font-size: 10px;
+.logo {
+    font-size: 13px;
+    font-weight: bold;
     letter-spacing: 3px;
-    color: #899487;
 }
 
-/* TITOLO */
-
-.name {
-    font-size: clamp(60px, 12vw, 140px);
-    font-weight: 700;
-    letter-spacing: -9px;
-    line-height: 0.85;
-    color: #344d3b;
-    margin-bottom: 45px;
+.status {
+    color: #a78bfa;
+    font-size: 11px;
+    letter-spacing: 2px;
 }
 
-.subtitle {
+/* HERO */
+
+.tag {
+    color: #a78bfa;
     font-size: 11px;
     letter-spacing: 4px;
-    color: #8c9788;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-/* DESCRIZIONE */
+.name {
+    font-size: clamp(65px, 13vw, 155px);
+    font-weight: 800;
+    line-height: 0.82;
+    letter-spacing: -9px;
+    margin-bottom: 40px;
+}
 
-.description {
-    max-width: 400px;
-    font-size: 14px;
+.name span {
+    color: #a78bfa;
+}
+
+.intro {
+    max-width: 420px;
+    color: #92929e;
+    font-size: 15px;
     line-height: 1.8;
-    color: #788274;
-    margin-bottom: 90px;
+    margin-bottom: 110px;
 }
 
-/* PROGETTI */
+/* PROJECTS */
 
-.section-title {
+.projects-header {
     display: flex;
     justify-content: space-between;
-    font-size: 10px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.projects-header h2 {
+    font-size: 12px;
     letter-spacing: 3px;
-    color: #899487;
-    margin-bottom: 20px;
+    color: #a78bfa;
+}
+
+.projects-header span {
+    color: #62626e;
+    font-size: 11px;
 }
 
 .works {
-    border-top: 1px solid #d3d8ce;
+    border-top: 1px solid #292932;
 }
 
 .work {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 28px 12px;
-    border-bottom: 1px solid #d3d8ce;
-    color: #344638;
+    padding: 32px 15px;
+    border-bottom: 1px solid #292932;
+    color: #f5f5f7;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
 }
 
 .work:hover {
-    background: #e9ebe2;
-    padding-left: 25px;
+    background: #15131e;
+    padding-left: 30px;
 }
 
 .work-left {
@@ -110,23 +126,23 @@ body {
 }
 
 .number {
-    font-size: 11px;
-    color: #a0aa9a;
+    color: #777481;
+    font-size: 12px;
 }
 
 .project-name {
-    font-size: clamp(19px, 3vw, 28px);
+    font-size: clamp(20px, 3vw, 30px);
     font-weight: 500;
 }
 
 .arrow {
-    font-size: 24px;
-    color: #83947f;
+    font-size: 25px;
+    color: #a78bfa;
     transition: transform 0.3s ease;
 }
 
 .work:hover .arrow {
-    transform: translate(5px, -5px);
+    transform: translate(6px, -6px);
 }
 
 /* FOOTER */
@@ -135,30 +151,30 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
-    padding-top: 20px;
-    border-top: 1px solid #d6d9cf;
+    padding-top: 25px;
+    border-top: 1px solid #25252e;
+    color: #62626e;
     font-size: 10px;
     letter-spacing: 2px;
-    color: #9ba394;
 }
 
 /* MOBILE */
 
 @media (max-width: 600px) {
     body {
-        padding: 8% 7%;
+        padding: 30px 7%;
     }
 
-    .top {
-        margin-bottom: 75px;
+    header {
+        margin-bottom: 80px;
     }
 
     .name {
         letter-spacing: -5px;
     }
 
-    .description {
-        margin-bottom: 65px;
+    .intro {
+        margin-bottom: 75px;
     }
 
     .work-left {
@@ -177,29 +193,29 @@ footer {
 
 <div class="container">
 
-    <header class="top">
-        <span>AS — CREATIVE PORTFOLIO</span>
-        <span>2026</span>
+    <header>
+        <span class="logo">AS — PORTFOLIO</span>
+        <span class="status">● AVAILABLE FOR PROJECTS</span>
     </header>
 
     <main>
 
+        <p class="tag">WELCOME TO MY PORTFOLIO</p>
+
         <h1 class="name">
             AMIR<br>
-            SHAKIB
+            SHAKIB<span>.</span>
         </h1>
 
-        <p class="subtitle">SELECTED WORKS — 2026</p>
-
-        <p class="description">
+        <p class="intro">
             Una raccolta dei miei progetti, delle mie idee
             e dei lavori realizzati. Uno spazio dedicato
-            alla creatività e alla sperimentazione.
+            alla creatività, alla tecnologia e alla sperimentazione.
         </p>
 
-        <div class="section-title">
-            <span>PROGETTI SELEZIONATI</span>
-            <span>03 WORKS</span>
+        <div class="projects-header">
+            <h2>SELECTED PROJECTS</h2>
+            <span>03 WORKS — 2026</span>
         </div>
 
         <div class="works">
