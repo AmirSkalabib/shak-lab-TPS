@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amir Shakib — Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f1e9;
+    color: #344638;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    padding: 5% 8%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HEADER */
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #d6d9cf;
+    margin-bottom: 100px;
+}
+
+.top span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #899487;
+}
+
+/* TITOLO */
+
+.name {
+    font-size: clamp(60px, 12vw, 140px);
+    font-weight: 700;
+    letter-spacing: -9px;
+    line-height: 0.85;
+    color: #344d3b;
+    margin-bottom: 45px;
+}
+
+.subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #8c9788;
+    margin-bottom: 20px;
+}
+
+/* DESCRIZIONE */
+
+.description {
+    max-width: 400px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #788274;
+    margin-bottom: 90px;
+}
+
+/* PROGETTI */
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #899487;
+    margin-bottom: 20px;
+}
+
+.works {
+    border-top: 1px solid #d3d8ce;
+}
+
+.work {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 12px;
+    border-bottom: 1px solid #d3d8ce;
+    color: #344638;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.work:hover {
+    background: #e9ebe2;
+    padding-left: 25px;
+}
+
+.work-left {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.number {
+    font-size: 11px;
+    color: #a0aa9a;
+}
+
+.project-name {
+    font-size: clamp(19px, 3vw, 28px);
+    font-weight: 500;
+}
+
+.arrow {
+    font-size: 24px;
+    color: #83947f;
+    transition: transform 0.3s ease;
+}
+
+.work:hover .arrow {
+    transform: translate(5px, -5px);
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding-top: 20px;
+    border-top: 1px solid #d6d9cf;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #9ba394;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    body {
+        padding: 8% 7%;
+    }
+
+    .top {
+        margin-bottom: 75px;
+    }
+
+    .name {
+        letter-spacing: -5px;
+    }
+
+    .description {
+        margin-bottom: 65px;
+    }
+
+    .work-left {
+        gap: 18px;
+    }
+
+    footer {
+        gap: 15px;
+        font-size: 9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="top">
+        <span>AS — CREATIVE PORTFOLIO</span>
+        <span>2026</span>
+    </header>
+
+    <main>
+
+        <h1 class="name">
+            AMIR<br>
+            SHAKIB
+        </h1>
+
+        <p class="subtitle">SELECTED WORKS — 2026</p>
+
+        <p class="description">
+            Una raccolta dei miei progetti, delle mie idee
+            e dei lavori realizzati. Uno spazio dedicato
+            alla creatività e alla sperimentazione.
+        </p>
+
+        <div class="section-title">
+            <span>PROGETTI SELEZIONATI</span>
+            <span>03 WORKS</span>
+        </div>
+
+        <div class="works">
+
+            <a href="anagrafica.html" target="_blank"
+               rel="noopener noreferrer" class="work">
+                <div class="work-left">
+                    <span class="number">01</span>
+                    <span class="project-name">Anagrafica 1.0</span>
+                </div>
+                <span class="arrow">↗</span>
+            </a>
+
+            <a href="calcolatrice.html" target="_blank"
+               rel="noopener noreferrer" class="work">
+                <div class="work-left">
+                    <span class="number">02</span>
+                    <span class="project-name">Calcolatrice 1.0</span>
+                </div>
+                <span class="arrow">↗</span>
+            </a>
+
+            <a href="https://example.com" target="_blank"
+               rel="noopener noreferrer" class="work">
+                <div class="work-left">
+                    <span class="number">03</span>
+                    <span class="project-name">Progetto 03</span>
+                </div>
+                <span class="arrow">↗</span>
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <span>© 2026 AMIR SHAKIB</span>
+        <span>DESIGNED WITH CARE</span>
+    </footer>
+
+</div>
+
+</body>
+</html>
