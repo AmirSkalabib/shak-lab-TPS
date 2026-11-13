@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 <title>Amir Shakib — Portfolio</title>
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -18,24 +20,22 @@ body {
     background: #09090d;
     color: #f5f5f7;
     font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
-    padding: 45px 8%;
+    padding: 35px 7%;
 }
 
 .container {
-    max-width: 1150px;
+    max-width: 1250px;
     margin: auto;
 }
 
-/* HEADER */
+/* NAVBAR */
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #25252e;
-    margin-bottom: 110px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #292536;
 }
 
 .logo {
@@ -44,13 +44,21 @@ header {
     letter-spacing: 3px;
 }
 
-.status {
+.nav-right {
     color: #a78bfa;
     font-size: 11px;
     letter-spacing: 2px;
 }
 
 /* HERO */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 230px;
+    gap: 50px;
+    align-items: end;
+    padding: 110px 0 100px;
+}
 
 .tag {
     color: #a78bfa;
@@ -60,89 +68,155 @@ header {
 }
 
 .name {
-    font-size: clamp(65px, 13vw, 155px);
+    font-size: clamp(75px, 12vw, 155px);
     font-weight: 800;
-    line-height: 0.82;
-    letter-spacing: -9px;
-    margin-bottom: 40px;
+    line-height: 0.78;
+    letter-spacing: -10px;
 }
 
 .name span {
     color: #a78bfa;
 }
 
-.intro {
-    max-width: 420px;
+.hero-description {
     color: #92929e;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.8;
-    margin-bottom: 110px;
+    max-width: 380px;
+    margin-top: 35px;
+}
+
+/* LATERAL INFO */
+
+.side-info {
+    border-left: 1px solid #353044;
+    padding-left: 25px;
+    padding-bottom: 5px;
+}
+
+.side-info p {
+    color: #777481;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.side-info h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.side-info h3 span {
+    color: #a78bfa;
+}
+
+/* DECORAZIONE */
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.divider span:first-child {
+    color: #a78bfa;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.line {
+    height: 1px;
+    background: #292536;
+    flex: 1;
 }
 
 /* PROJECTS */
 
-.projects-header {
+.projects-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
 }
 
-.projects-header h2 {
-    font-size: 12px;
+.projects-title h2 {
+    font-size: 13px;
     letter-spacing: 3px;
-    color: #a78bfa;
 }
 
-.projects-header span {
-    color: #62626e;
+.projects-title span {
+    color: #777481;
     font-size: 11px;
 }
 
-.works {
-    border-top: 1px solid #292932;
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-.work {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 32px 15px;
-    border-bottom: 1px solid #292932;
-    color: #f5f5f7;
+.project {
+    min-height: 220px;
+    padding: 28px;
+    background: #13131a;
+    border: 1px solid #292536;
+    border-radius: 12px;
     text-decoration: none;
-    transition: all 0.35s ease;
-}
-
-.work:hover {
-    background: #15131e;
-    padding-left: 30px;
-}
-
-.work-left {
+    color: white;
     display: flex;
-    align-items: center;
-    gap: 35px;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-.number {
-    color: #777481;
+.project:hover {
+    background: #1b1727;
+    border-color: #a78bfa;
+    transform: translateY(-5px);
+}
+
+.project-number {
+    color: #a78bfa;
     font-size: 12px;
+    letter-spacing: 3px;
 }
 
-.project-name {
-    font-size: clamp(20px, 3vw, 30px);
+.project-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.project h3 {
+    font-size: clamp(22px, 3vw, 32px);
     font-weight: 500;
 }
 
-.arrow {
-    font-size: 25px;
-    color: #a78bfa;
-    transition: transform 0.3s ease;
+.project p {
+    color: #777481;
+    font-size: 11px;
+    margin-top: 9px;
 }
 
-.work:hover .arrow {
-    transform: translate(6px, -6px);
+.arrow {
+    color: #a78bfa;
+    font-size: 27px;
+    transition: 0.3s;
+}
+
+.project:hover .arrow {
+    transform: translate(5px, -5px);
+}
+
+/* TERZO PROGETTO */
+
+.project-wide {
+    grid-column: span 2;
+    min-height: 160px;
 }
 
 /* FOOTER */
@@ -150,9 +224,9 @@ header {
 footer {
     display: flex;
     justify-content: space-between;
-    margin-top: 100px;
-    padding-top: 25px;
-    border-top: 1px solid #25252e;
+    margin-top: 90px;
+    padding-top: 22px;
+    border-top: 1px solid #292536;
     color: #62626e;
     font-size: 10px;
     letter-spacing: 2px;
@@ -160,33 +234,60 @@ footer {
 
 /* MOBILE */
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
+
     body {
-        padding: 30px 7%;
+        padding: 25px 6%;
     }
 
-    header {
-        margin-bottom: 80px;
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 85px 0 65px;
+        gap: 45px;
     }
 
     .name {
-        letter-spacing: -5px;
+        letter-spacing: -6px;
     }
 
-    .intro {
-        margin-bottom: 75px;
+    .side-info {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        border-left: none;
+        border-top: 1px solid #353044;
+        padding: 20px 0 0;
     }
 
-    .work-left {
-        gap: 18px;
+    .side-info p {
+        font-size: 9px;
+    }
+
+    .side-info h3 {
+        font-size: 14px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .project-wide {
+        grid-column: span 1;
+    }
+
+    .project {
+        min-height: 180px;
     }
 
     footer {
         gap: 15px;
         font-size: 9px;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
@@ -194,66 +295,146 @@ footer {
 <div class="container">
 
     <header>
-        <span class="logo">AS — PORTFOLIO</span>
-        <span class="status">● AVAILABLE FOR PROJECTS</span>
+
+        <span class="logo">AS. / PORTFOLIO</span>
+
+        <span class="nav-right">PERSONAL WEBSITE — 2026</span>
+
     </header>
+
 
     <main>
 
-        <p class="tag">WELCOME TO MY PORTFOLIO</p>
+        <section class="hero">
 
-        <h1 class="name">
-            AMIR<br>
-            SHAKIB<span>.</span>
-        </h1>
+            <div>
 
-        <p class="intro">
-            Una raccolta dei miei progetti, delle mie idee
-            e dei lavori realizzati. Uno spazio dedicato
-            alla creatività, alla tecnologia e alla sperimentazione.
-        </p>
+                <p class="tag">WELCOME TO MY WORLD</p>
 
-        <div class="projects-header">
-            <h2>SELECTED PROJECTS</h2>
-            <span>03 WORKS — 2026</span>
+                <h1 class="name">
+                    AMIR<br>
+                    SHAKIB<span>.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Benvenuto nel mio portfolio personale.
+                    Qui raccolgo i miei progetti, le mie idee
+                    e i lavori realizzati nel mondo della tecnologia
+                    e della programmazione.
+                </p>
+
+            </div>
+
+
+            <div class="side-info">
+
+                <div>
+                    <p>PROFILE</p>
+                    <h3>Amir <span>Shakib</span></h3>
+                </div>
+
+                <div>
+                    <p>FIELD</p>
+                    <h3>Web Development</h3>
+                </div>
+
+                <div>
+                    <p>YEAR</p>
+                    <h3>2026</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="divider">
+
+            <span>01 / SELECTED WORKS</span>
+
+            <div class="line"></div>
+
         </div>
 
-        <div class="works">
+
+        <div class="projects-title">
+
+            <h2>PROJECTS</h2>
+
+            <span>03 PROJECTS AVAILABLE</span>
+
+        </div>
+
+
+        <section class="projects">
 
             <a href="anagrafica.html" target="_blank"
-               rel="noopener noreferrer" class="work">
-                <div class="work-left">
-                    <span class="number">01</span>
-                    <span class="project-name">Anagrafica 1.0</span>
+               rel="noopener noreferrer" class="project">
+
+                <span class="project-number">01 — DATA</span>
+
+                <div class="project-bottom">
+
+                    <div>
+                        <h3>Anagrafica 1.0</h3>
+                        <p>Inserimento e gestione dati</p>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
                 </div>
-                <span class="arrow">↗</span>
+
             </a>
+
 
             <a href="calcolatrice.html" target="_blank"
-               rel="noopener noreferrer" class="work">
-                <div class="work-left">
-                    <span class="number">02</span>
-                    <span class="project-name">Calcolatrice 1.0</span>
+               rel="noopener noreferrer" class="project">
+
+                <span class="project-number">02 — CALCULATOR</span>
+
+                <div class="project-bottom">
+
+                    <div>
+                        <h3>Calcolatrice 1.0</h3>
+                        <p>Operazioni matematiche</p>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
                 </div>
-                <span class="arrow">↗</span>
+
             </a>
+
 
             <a href="https://example.com" target="_blank"
-               rel="noopener noreferrer" class="work">
-                <div class="work-left">
-                    <span class="number">03</span>
-                    <span class="project-name">Progetto 03</span>
+               rel="noopener noreferrer" class="project project-wide">
+
+                <span class="project-number">03 — EXPERIMENTAL</span>
+
+                <div class="project-bottom">
+
+                    <div>
+                        <h3>Progetto 03</h3>
+                        <p>Altri progetti e sperimentazioni</p>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
                 </div>
-                <span class="arrow">↗</span>
+
             </a>
 
-        </div>
+        </section>
 
     </main>
 
+
     <footer>
+
         <span>© 2026 AMIR SHAKIB</span>
-        <span>DESIGNED WITH CARE</span>
+
+        <span>DESIGNED WITH CARE.</span>
+
     </footer>
 
 </div>
