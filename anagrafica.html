@@ -1,1 +1,457 @@
 
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anagrafica — Amir Shakib</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #09090d;
+            color: #f5f5f7;
+            min-height: 100vh;
+            padding: 40px 7%;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #292536;
+            margin-bottom: 65px;
+        }
+
+        .logo {
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .status {
+            color: #a78bfa;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        /* TITOLI */
+
+        .tag {
+            color: #a78bfa;
+            font-size: 11px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(35px, 6vw, 65px);
+            letter-spacing: -3px;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            color: #a78bfa;
+        }
+
+        .descrizione {
+            color: #92929e;
+            font-size: 14px;
+            margin-bottom: 45px;
+            line-height: 1.7;
+        }
+
+        /* FORM */
+
+        .contenitore {
+            max-width: 600px;
+            padding: 30px;
+            background: #13131a;
+            border: 1px solid #292536;
+            border-radius: 16px;
+            box-shadow: 0 0 35px rgba(167,139,250,0.06);
+        }
+
+        .campo {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 9px;
+            color: #aaa5b8;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+
+            background: #09090d;
+            border: 1px solid #353044;
+            border-radius: 8px;
+
+            color: white;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #a78bfa;
+            box-shadow: 0 0 10px rgba(167,139,250,0.2);
+        }
+
+        input::placeholder {
+            color: #55515f;
+        }
+
+        /* BOTTONE */
+
+        button {
+            width: 100%;
+            padding: 15px;
+
+            background: #a78bfa;
+            color: #09090d;
+
+            border: none;
+            border-radius: 8px;
+
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #c4b5fd;
+            box-shadow: 0 0 18px rgba(167,139,250,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* TABELLA */
+
+        .sezione-tabella {
+            margin-top: 85px;
+        }
+
+        .titolo-tabella {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+        .titolo-tabella h2 {
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .titolo-tabella span {
+            color: #a78bfa;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .tabella-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid #292536;
+            border-radius: 12px;
+        }
+
+        table {
+            width: 100%;
+            min-width: 650px;
+            border-collapse: collapse;
+            background: #13131a;
+        }
+
+        th, td {
+            padding: 17px 15px;
+            text-align: left;
+            border-bottom: 1px solid #292536;
+            font-size: 13px;
+        }
+
+        th {
+            background: #201b2c;
+            color: #c4b5fd;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        td {
+            color: #d4d1df;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #17151f;
+        }
+
+        tbody tr:hover {
+            background: #252132;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* FOOTER */
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 90px;
+            padding-top: 25px;
+            border-top: 1px solid #292536;
+
+            color: #62626e;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 25px 6%;
+            }
+
+            header {
+                margin-bottom: 50px;
+            }
+
+            .contenitore {
+                padding: 22px;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            footer {
+                gap: 15px;
+                font-size: 9px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <span class="logo">AS — PORTFOLIO</span>
+
+        <span class="status">● PROJECT 01</span>
+
+    </header>
+
+
+    <main>
+
+        <p class="tag">DATA MANAGEMENT — 2026</p>
+
+        <h1>
+            Inserimento dati<span>.</span>
+        </h1>
+
+        <p class="descrizione">
+            Inserisci i dati anagrafici delle persone
+            e aggiungili all'elenco sottostante.
+        </p>
+
+
+        <div class="contenitore">
+
+            <div class="campo">
+
+                <label for="nome">NOME</label>
+
+                <input type="text" id="nome" placeholder="Inserisci il nome">
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="cognome">COGNOME</label>
+
+                <input type="text" id="cognome" placeholder="Inserisci il cognome">
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="indirizzo">INDIRIZZO</label>
+
+                <input type="text" id="indirizzo" placeholder="Inserisci l'indirizzo">
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="citta">CITTÀ</label>
+
+                <input type="text" id="citta" placeholder="Inserisci la città">
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="eta">ETÀ</label>
+
+                <input type="number" id="eta" min="0" placeholder="Inserisci l'età">
+
+            </div>
+
+
+            <button type="button" onclick="aggiungiDati()">
+
+                + AGGIUNGI ALLA TABELLA
+
+            </button>
+
+        </div>
+
+
+        <!-- TABELLA -->
+
+        <div class="sezione-tabella">
+
+            <div class="titolo-tabella">
+
+                <h2>Elenco persone</h2>
+
+                <span>DATABASE — 01</span>
+
+            </div>
+
+
+            <div class="tabella-wrapper">
+
+                <table id="tabella">
+
+                    <thead>
+
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cognome</th>
+                            <th>Indirizzo</th>
+                            <th>Città</th>
+                            <th>Età</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="corpoTabella">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <span>© 2026 AMIR SHAKIB</span>
+
+        <span>PROJECT 01 — ANAGRAFICA</span>
+
+    </footer>
+
+</div>
+
+
+<script>
+
+    function aggiungiDati() {
+
+        let nome = document.getElementById("nome").value;
+        let cognome = document.getElementById("cognome").value;
+        let indirizzo = document.getElementById("indirizzo").value;
+        let citta = document.getElementById("citta").value;
+        let eta = document.getElementById("eta").value;
+
+
+        if (nome.trim() === "" ||
+            cognome.trim() === "" ||
+            indirizzo.trim() === "" ||
+            citta.trim() === "" ||
+            eta === "") {
+
+            alert("Compilare tutti i campi!");
+            return;
+
+        }
+
+
+        let tabella = document.getElementById("corpoTabella");
+
+        let riga = tabella.insertRow(-1);
+
+        let dati = [nome, cognome, indirizzo, citta, eta];
+
+
+        for (let i = 0; i < dati.length; i++) {
+
+            let cella = riga.insertCell(i);
+
+            cella.textContent = dati[i];
+
+        }
+
+
+        document.getElementById("nome").value = "";
+        document.getElementById("cognome").value = "";
+        document.getElementById("indirizzo").value = "";
+        document.getElementById("citta").value = "";
+        document.getElementById("eta").value = "";
+
+    }
+
+</script>
+
+</body>
+
+</html>
+
